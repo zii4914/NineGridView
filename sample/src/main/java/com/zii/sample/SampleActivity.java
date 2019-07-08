@@ -43,20 +43,20 @@ public class SampleActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_sample);
     mNineGridView = findViewById(R.id.ngv);
-
-    NineGridView.setImageLoader(new NineGridView.ImageLoader() {
-      @Override
-      public void onDisplayImage(Context context, ImageView imageView, String url) {
-        Glide.with(imageView).load(url).into(imageView);
-      }
-
-      @Override
-      public Bitmap getCacheImage(String url) {
-        return null;
-      }
-    });
-
-    initImageInfo();
+    //
+    //NineGridView.setImageLoader(new NineGridView.ImageLoader() {
+    //  @Override
+    //  public void onDisplayImage(Context context, ImageView imageView, String url) {
+    //    Glide.with(imageView).load(url).into(imageView);
+    //  }
+    //
+    //  @Override
+    //  public Bitmap getCacheImage(String url) {
+    //    return null;
+    //  }
+    //});
+    //
+    //initImageInfo();
 
     int spacing = 18;
     int maxSize = 9;
@@ -65,22 +65,22 @@ public class SampleActivity extends Activity {
     mNineGridView.setMaxSize(maxSize);
 
     mNineGridView.setAdapter(new NineGridViewAdapter(this, mImageInfo) {
-      @Override
-      protected void onImageItemClick(Context context, NineGridView nineGridView, int index,
-          List<ImageInfo> imageInfo) {
-        super.onImageItemClick(context, nineGridView, index, imageInfo);
-        Log.d("zii-", "onImageItemClick: " + index + "   " + imageInfo.get(index));
-      }
-
-      @Override
-      protected ImageView generateImageView(Context context) {
-        return super.generateImageView(context);
-      }
-
-      @Override
-      public List<ImageInfo> getImageInfo() {
-        return super.getImageInfo();
-      }
+    //  @Override
+    //  protected void onImageItemClick(Context context, NineGridView nineGridView, int index,
+    //      List<ImageInfo> imageInfo) {
+    //    super.onImageItemClick(context, nineGridView, index, imageInfo);
+    //    Log.d("zii-", "onImageItemClick: " + index + "   " + imageInfo.get(index));
+    //  }
+    //
+    //  @Override
+    //  protected ImageView generateItemView(Context context) {
+    //    return super.generateItemView(context);
+    //  }
+    //
+    //  @Override
+    //  public List<ImageInfo> getImageInfo() {
+    //    return super.getImageInfo();
+    //  }
     });
   }
 
